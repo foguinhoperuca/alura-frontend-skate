@@ -46,7 +46,7 @@ body {
 	position: absolute;
 	left: -100vw;
 	transition: .25s;
-	z-index: 99;
+	/*z-index: 99;*/
 }
 
 .lateral-menu--active {
@@ -115,7 +115,7 @@ body {
 
 /* TODO implement it! */
 .emphasis--video {
-	/* background-color: red;		/\* FIXME testing... *\/ */
+	background-color: red;		/* FIXME testing... */
 }
 
 .main {
@@ -124,7 +124,7 @@ body {
 	gap: 16px;
 }
 
-.title-page {
+.page-title {
 	font-size: 1.5rem;
 	font-weight: 700;
 }
@@ -221,13 +221,11 @@ body {
 	margin-right: 8px;
 }
 
-/*
 .card--recent {
     display: none;
 }
-*/
 
-.secao {
+.section {
     display: grid;
     gap: 16px;
 }
@@ -297,22 +295,18 @@ body {
         display: grid;
         grid-template-columns: auto 1fr auto;
         grid-template-areas:
-            "page-tile page-title page-title"
-            "video-emphasis video-emphasis video-emphasis"
+            "page-title page-title page-title"
+            "video-emphasis video-emphasis video-recent"
             "video-section video-section video-section"
             "recent-products recent-products recent-products"
-            "product-section product-section product-section"
+            "product-section product-section product-section";
         column-gap: 32px;
         padding: 16px 60px;
         grid-column: 2;
     }
 
-    .section-title {
-        grid-column: span 4;
-    }
-
     .card--emphasis {
-        margin-botom: 0;
+        margin-bottom: 0;
     }
 
     .card__image--mobile {
@@ -337,6 +331,7 @@ body {
         width: 256px;
         padding: 16px;
         box-sizing: border-box;
+        align-self: flex-start;
     }
 
     .card--recent .card__title {
@@ -378,5 +373,35 @@ body {
         color: #95999C;
     }
 
-    /* TODO implement section classes */
+    .section-title {
+        grid-column: span 4;
+    }
+
+    .section {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .video-emphasis {
+        grid-area: video-emphasis;
+    }
+
+    .video-recent {
+        grid-area: video-recent;
+    }
+
+    .video-section {
+        grid-area: video-section;
+    }
+
+    .product-emphasis {
+        grid-area: product-emphasis;
+    }
+
+    .recent-products {
+        grid-area: recent-products;
+    }
+
+    .product-section {
+        grid-area: product-area;
+    }
 }
